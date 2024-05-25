@@ -1,0 +1,2 @@
+# TerraformingOfMars
+Adaptacija drustvene igre
