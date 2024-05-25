@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public GameObject odabirFaza;
     public static GameManager Instance;
     private Faza faza;
+    private IgracScript igrac;
 
     public void Awake()
     {
@@ -29,24 +30,30 @@ public class GameManager : MonoBehaviour
         txtFaza.text = faza.ToString();
         tajmer.text = "0";
 
+        igrac = GameObject.FindGameObjectWithTag("Igrac").GetComponent<IgracScript>();
+
         switch (faza)
         {
             case Faza.odabirFaze:
                 PrikaziOdabirFaze();
                 break;
             case Faza.razvoj:
+                igrac.OdigrajKartu(Faza.razvoj);
                 Debug.Log("1");
                 break;
             case Faza.izgradnja:
+                igrac.OdigrajKartu(Faza.izgradnja);
                 Debug.Log("2");
                 break;
             case Faza.akcija:
                 Debug.Log("3");
                 break;
             case Faza.proizvodnja:
+                igrac.Proizvodi();
                 Debug.Log("4");
                 break;
             case Faza.istrazivanje:
+                igrac.VuciKarte(3, 2);
                 Debug.Log("5");
                 break;
         }
@@ -83,7 +90,15 @@ public class GameManager : MonoBehaviour
 
     public void PromeniFazu()
     {
-        faza = faza + 1;
+        if (!faza.Equals(Faza.istrazivanje))
+        {
+            faza = faza + 1;
+        }
+        else
+        {
+            faza = Faza.odabirFaze;
+        }
+        
         Debug.Log("Promena faze");
         IzvrsiFazu();
     }
