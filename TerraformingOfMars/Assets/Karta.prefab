@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5251892946344961113}
   - component: {fileID: 5613154972300340637}
+  - component: {fileID: 6315050866839083722}
   m_Layer: 0
   m_Name: Karta
   m_TagString: Untagged
@@ -84,3 +85,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6315050866839083722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826690933393292858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25be020d5ec99b4c8309171a9eafef1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
